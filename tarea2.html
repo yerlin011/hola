@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>validar datos por js 2</title>
+
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script type="text/javascript">
+function validardatos()
+{
+	
+        var txtNombre = document.getElementById('nombre').value;
+        var txtapellido = document.getElementById('apellido').value;
+        var txtFecha = document.getElementById('fecha').value;
+        var txtEdad = document.getElementById('edad').value;
+        var cmbSelector = document.getElementById('selector').selectedIndex;
+        var txtlugar = document.getElementById('lugar').value;
+        var txtcolegio = document.getElementById('colegio').value;
+	    var cmbSelectordos = document.getElementById('selectordos').selectedIndex;
+	    var cmbSelectortres = document.getElementById('selectortres').selectedIndex;
+        var txtcalle = document.getElementById('calle').value;
+        var cmbSelectorcuatro = document.getElementById('selectorcuatro').selectedIndex;
+        var txtsector= document.getElementById('sector').value;
+        var cmbSelectorcinco = document.getElementById('selectorcinco').selectedIndex;
+        var txttelefono= document.getElementById('telefono').value;
+        var txtNombrep = document.getElementById('nombrep').value;
+        var txtapellidop = document.getElementById('apellidop').value;
+        var txtocupacionp = document.getElementById('ocupacionp').value;
+        var cmbSelectorseis = document.getElementById('selectorseis').selectedIndex;
+        var txtcedula = document.getElementById('cedula').value;
+        var txtcelular = document.getElementById('celular').value;
+        var txtCorreo = document.getElementById('correo').value;
+        var txtdireccion = document.getElementById('direccion').value;
+        var txtNombrem = document.getElementById('nombrem').value;
+        var txtapellidom = document.getElementById('apellidom').value;
+        var txtocupacionm = document.getElementById('ocupacionm').value;
+        var cmbSelectorseism = document.getElementById('selectorseism').selectedIndex;
+        var txtcedulam = document.getElementById('cedulam').value;
+        var txtcelularm = document.getElementById('celularm').value;
+        var txtCorreom = document.getElementById('correom').value;
+        var txtdireccionm = document.getElementById('direccionm').value;
+        var cmbSelector = document.getElementById('selector').selectedIndex;
+		var chkEstado = document.getElementById('checkBox');
+		var rbtEstado = document.getElementsByName('radioButton');
+
+ 
+		var banderaRBTN = false;
+        
+		//Test campo obligatorio
+		if(txtNombre==null || txtNombre.length == 0 || /^\s+$/.test(txtNombre)){
+
+			alert("Error el campo nombre no debe ir vacio");
+			return false;
+		}
+      
+         if(txtapellido==null || txtapellido.length == 0 || /^\s+$/.test(txtapellido)){
+
+			alert("Error el campo apellido no debe ir vacio");
+			return false;
+		}
+		  if(!isNaN(txtFecha)){
+			alert('ERROR: Debe elegir una fecha');
+			return false;
+		}if(txtEdad == null || txtEdad.length == 0 || isNaN(txtEdad)){
+			alert('ERROR: Debe ingresar una edad');
+			return false;
+		}
+		if(cmbSelector == null || cmbSelector == 0){
+			alert('ERROR: Debe seleccionar una opcion del combo box Nacionalidad');
+			return false;
+		}
+		if(txtlugar==null || txtlugar.length == 0 || /^\s+$/.test(txtlugar)){
+
+			alert("Error el campo lugar no debe ir vacio");
+			return false;
+		}//test colegio
+		if(txtcolegio==null || txtcolegio.length == 0 || /^\s+$/.test(txtcolegio)){
+
+			alert("Error el campo colegio de procedencia no debe ir vacio");
+			return false;
+		}	//Test edad
+
+         
+
+		if(cmbSelectordos == null || cmbSelectordos == 0){
+			alert('ERROR: Debe seleccionar una opcion del combo box curso solicitado');
+			return false;
+		}
+		if(cmbSelectortres == null || cmbSelectortres == 0){
+			alert('ERROR: Debe seleccionar una opcion del combo box Nivel');
+			return false;
+		}
+		if(txtcalle == null || txtcalle.length == 0 || /^\s+$/.test(txtcalle)){
+			alert('ERROR: Debe ingresar una calle');
+			return false;
+		}
+		if(cmbSelectorcuatro == null || cmbSelectorcuatro == 0){
+			alert('ERROR: Debe seleccionar una opcion del combo box provincias disponibles');
+			return false;
+			}
+		if(txtsector == null || txtsector.length == 0 || /^\s+$/.test(txtsector)){
+			alert('ERROR: Debe ingresar un sector');
+			return false;
+		   }if(cmbSelectorcinco== null || cmbSelectorcinco == 0){
+			alert('ERROR: Debe seleccionar una opcion del combo box Pais');
+			return false;
+			}
+			if(txttelefono == null || txttelefono.length == 0 || isNaN(txttelefono) || txttelefono.length >= 15 ){
+			alert('ERROR: Debe ingresar un telefono');
+			return false;
+		  }
+		  if(txtNombrep==null || txtNombrep.length == 0 || /^\s+$/.test(txtNombrep))
+		  {
+           alert("Error el campo nombres  de padre  no debe ir vacio");
+		   return false;
+		   }
+		  if(txtapellidop==null || txtapellidop.length == 0 || /^\s+$/.test(txtapellidop)){
+            alert("Error el campo apellidos de padre no debe ir vacio");
+			return false;
+			}
+             
+          if(txtocupacionp==null || txtocupacionp.length == 0 || /^\s+$/.test(txtocupacionp)){
+            alert("Error el campo ocupacion de padre no debe ir vacio");
+			return false;
+		   }
+		   if(cmbSelectorseis == null || cmbSelectorseis== 0){
+			alert('ERROR: Debe seleccionar una opcion del combo box de la Nacionalidad del padre');
+			return false;
+		  }
+		    if( txtcedula==null || txtcedula.length == 0 || txtcedula.length>20){
+         
+          	alert("El cedula del padre esta muy larga ");
+          	return false;
+           }
+
+           if(txttxtcelular==null || txtcelular.length == 0 || txtcelular.length>15){
+           
+          	alert("El celular  del padre esta muy largo");
+          	return false;
+           }
+
+           if(!(/\S+@\S+\.\S+/.test(txtCorreo))){
+			 alert('ERROR: Debe escribir un correo válido del padre');
+			 return false;
+		     }
+         if(txtdireccion==null || txtdireccion.length == 0){
+            alert("Error el campo direccion del padre no debe ir vacio");
+			return false;
+		     }
+		   
+		  if(txtNombrem==null || txtNombrem.length == 0 || /^\s+$/.test(txtNombrem))
+		  {
+           alert("Error el campo nombres  de madre no debe ir vacio");
+		   return false;
+		   }
+		  if(txtapellidom==null || txtapellidom.length == 0 || /^\s+$/.test(txtapellidom)){
+            alert("Error el campo apellidos de madre no debe ir vacio");
+			return false;
+             }
+          if(txtocupacionm==null || txtocupacionm.length == 0 || /^\s+$/.test(txtocupacionm)){
+            alert("Error el campo ocupacion de madre no debe ir vacio");
+			return false;
+		    }
+		    if(cmbSelectorseism == null || cmbSelectorseism== 0){
+			alert('ERROR: Debe seleccionar una opcion del combo box de la Nacionalidad de la madre');
+			return false;
+		      }
+		    if( txtcedulam==null || txtcedulam.length == 0 || txtcedulam.length>20)
+            {
+          	alert("El cedula de la madre esta muy larga ");
+          	return false;
+            }
+           if(txttxtcelularm==null || txtcelularm.length == 0 || txtcelularm.length>15)
+            {
+          	alert("El celular  de la madre esta muy largo");
+          	return false;
+            }
+              if(!(/\S+@\S+\.\S+/.test(txtCorreom))){
+			  alert('ERROR: Debe escribir un correo válido de la madre');
+			  return false;
+		      } 
+		      if(txtdireccionm==null || txtdireccionm.length == 0)
+		      {
+              alert("Error el campo direccion de la madre no debe ir vacio");
+			  return false;
+		      }/*/
+        
+        
+ 
+		
+
+		
+		
+		//Test correo
+		
+		//Test fecha
+		
+		//Test comboBox
+		
+ 
+		//Test checkBox
+		if(!chkEstado.checked){
+			alert('ERROR: Debe seleccionar el checkbox');
+			return false;
+		}
+ 
+		//Test RadioButtons
+		for(var i = 0; i < rbtEstado.length; i++){
+			if(rbtEstado[i].checked){
+				banderaRBTN = true;
+				break;
+			}
+		}
+		if(!banderaRBTN){
+			alert('ERROR: Debe elegir una opción de radio button');
+			return false;
+		}
+        
+		
+		
+			//Test RadioButtons
+		/*for(var i = 0; i < rbtEstado.length; i++){
+			if(rbtEstado[i].checked){
+				banderaRBTN = true;
+				break;
+			}
+		}
+		if(!banderaRBTN){
+			alert('ERROR: Debe elegir una opción de radio button');
+			return false;
+		}/*/
+        return true;
+
+}
+
+</script>
+</head>
+
+<body>
+<form action="enviar.php" method="POST"  onsubmit="return validardatos()">
+<table>
+<h3> Datos del alumno </h3>
+<label for="nombre">
+<tr>
+<td><span> nombres:</span>
+</label>
+
+<input id="nombre" name="nombre" type="text"></td>
+<label for="apellido">
+<td><span> apellidos:</span>
+</label>
+<input id="apellido" name="apellido" type="text"></td>
+</tr>
+
+<td><span>Sexo</span>
+<br>
+<input type="radio" name="radio" id="hombre">masculino<br>
+<input type="radio" name="radio" id="mujer">femenino<br></td>
+
+
+
+</table>
+<label for="fecha">
+<span>Fecha de nacimiento:</span>
+</label>
+<input id="fecha" name="fecha" type="date">
+ 
+<br><br>
+<label for="edad">
+<span>Edad:</span>
+</label>
+<input id="edad" name="edad" type="text">
+<br><br>
+<label for="selector">
+<span></span>
+</label>
+<span>Nacionalidad</span>
+<select id="selector" name="selector">
+<option value="">Elija nacionalidad</option>
+<option value="1">Argentina</option>
+<option value="2">Alemana</option>
+<option value="3">Australiana</option>
+<option value="1">Austriaca</option>
+<option value="2">Americana</option>
+<option value="3">Arabe</option>
+<option value="1">Belgica</option>
+<option value="2">Bimarna</option>
+<option value="3">Brasileña</option>
+<option value="1">Bulgara</option>
+<option value="2">Canadiense</option>
+<option value="3">Chilena</option>
+<option value="1">China</option>
+<option value="2">Colombiana</option>
+<option value="3">coreana</option>
+<option value="1">Cubana</option>
+<option value="2">Dominicana</option>
+<option value="3">Danesa</option>
+<option value="1">Mexicana</option>
+<option value="2">Peruana</option>
+<option value="3">puerto riqueña</option>
+<option value="1">inglesa</option>
+<option value="2">francesa</option>
+<option value="3">Española</option>
+</select>
+
+<br> <br>
+<label for="lugar">
+<td><span> lugar de nacimiento:</span>
+</label>
+<input id="lugar" name="lugar" type="text">
+<br>
+<label for="colegio">
+<td><span> colegio de procedencia:</span>
+</label>
+<input id="colegio" name="colegio" type="text">
+<br>
+<label for="selector">
+<span></span>
+</label>
+<span>Curso solicitado</span>
+<select id="selectordos" name="selectordos">
+<option value="">Elija una opcion</option>
+<option value="1"> 1ro</option>
+<option value="2"> 2do</option>
+<option value="3"> 3ro</option>
+<option value="4"> 4to</option>
+<option value="5"> 5to</option>
+<option value="6"> 6to</option>
+<option value="7"> 7mo</option>
+<option value="8"> 8vo</option>
+
+</select>
+<br>
+<label for="selector">
+<span></span>
+</label>
+<span>Nivel</span>
+<select id="selectortres" name="selectortres">
+<option value="">Elija una opcion</option>
+<option value="1"> primaria</option>
+<option value="2"> secundaria</option>
+<option value="3"> preparatoria</option>
+</select>
+<br>
+<h3>Direccion</h3>
+<label for="calle">
+<span>Calle:</span>
+</label>
+<input id="calle" name="calle" size="60px" type="text">
+<br><br>
+<label for="selector">
+<span></span>
+</label>
+<span>provincias disponibles</span>
+<select id="selectorcuatro" name="selectorcuatro">
+<option value="">Elija una provincia</option>
+<option value="1"> Santo domingo</option>
+<option value="2"> Santiago</option>
+<option value="3"> San pedro</option>
+<option value="4"> San francisco </option>
+<option value="5"> San juan</option>
+<option value="6"> Salcedo</option>
+<option value="7"> Barahona </option>
+<option value="8"> la altagracia</option>
+<option value="9"> Seibo</option>
+<option value="10">Samana</option>
+<option value="11">Higuey</option>
+<option value="12">Dajabon</option>
+<option value="13"> Neiba</option>
+<option value="14"> Bani </option>
+<option value="15"> Jimani</option>
+<option value="16"> la romana</option>
+<option value="17"> banica</option>
+<option value="18"> Elias piña</option>
+<option value="19"> La vega</option>
+</select>
+<br>
+<label for="sector">
+<span>Sector:</span>
+</label>
+<input id="sector" name="sector" size="60px" type="text">
+<br><br>
+<label for="selector">
+<span></span>
+</label>
+<span>Pais</span>
+<select id="selectorcinco" name="selectorcinco">
+<option value="">Elija su pais</option>
+<option value="1"> Republica Dominica</option>
+<option value="2"> Puerto Rico</option>
+<option value="3"> Usa</option>
+<option value="4"> España</option>
+<option value="5"> Italia</option>
+<option value="6"> Francia</option>
+</select>
+<br>
+<label for="telefono">
+<span>Telefono casa:</span>
+</label>
+<input id="telefono" name="telefono"  type="text">
+<br><br>
+<h3>Datos del padre</h3>
+<label for="nombrep">
+<tr>
+<td><span> nombres:</span>
+</label>
+<input id="nombrep" name="nombrep" type="text"></td>
+<label for="apellidop">
+<td><span> apellidos:</span>
+</label>
+<input id="apellidop" name="apellidop" type="text"></td>
+</tr>
+<br>
+<label for="ocupacionp">
+<span> ocupacion:</span>
+</label>
+<input id="ocupacionp" name="ocupacionp" type="text">
+<br>
+<label for="radiodos">
+		<span>Selecciona una opción:</span>
+		</label><br>
+		<input type="radio" id="radiodos" name="radiodos"> Soltero<br>
+		<input type="radio" id="radiodos" name="radiodos"> Casado<br>
+		<br>
+		<label for="selector">
+<span></span>
+</label>
+<span>Nacionalidad</span>
+<select id="selectorseis" name="selectorseis">
+<option value="">Elija nacionalidad</option>
+<option value="1">Argentina</option>
+<option value="2">Alemana</option>
+<option value="3">Australiana</option>
+<option value="1">Austriaca</option>
+<option value="2">Americana</option>
+<option value="3">Arabe</option>
+<option value="1">Belgica</option>
+<option value="2">Bimarna</option>
+<option value="3">Brasileña</option>
+<option value="1">Bulgara</option>
+<option value="2">Canadiense</option>
+<option value="3">Chilena</option>
+<option value="1">China</option>
+<option value="2">Colombiana</option>
+<option value="3">coreana</option>
+<option value="1">Cubana</option>
+<option value="2">Dominicana</option>
+<option value="3">Danesa</option>
+<option value="1">Mexicana</option>
+<option value="2">Peruana</option>
+<option value="3">puerto riqueña</option>
+<option value="1">inglesa</option>
+<option value="2">francesa</option>
+<option value="3">Española</option>
+</select>
+<br>
+<label for="cedula">
+<span> cedula:</span>
+</label>
+<input id="cedula" name="cedula" type="text">
+<br>
+<label for="celular">
+<span> celular:</span>
+</label>
+<input id="celular" name="celular" type="text"></td>
+<br>
+<label for="correo">
+<span> Correo:</span>
+</label>
+<input id="correo" name="correo" type="email"></td>
+<br>
+<label for="direccion">
+<span> Direccion:</span>
+</label>
+<input id="direccion" name="direccion" type="text">
+<br>
+<h3>Datos de la madre</h3>
+<label for="nombrem">
+<tr>
+<td><span> nombres:</span>
+</label>
+<input id="nombrem" name="nombrem" type="text"></td>
+<label for="apellidom">
+<td><span> apellidos:</span>
+</label>
+<input id="apellidom" name="apellidom" type="text"></td>
+</tr>
+<br>
+<label for="ocupacionm">
+<span> ocupacion:</span>
+</label>
+<input id="ocupacionm" name="ocupacionm" type="text">
+<br>
+<label for="radiodosm">
+		<span>Selecciona una opción:</span>
+		</label><br>
+		<input type="radio" id="radiodosm" name="radiodosm"> Soltero<br>
+		<input type="radio" id="radiodosm" name="radiodosm"> Casado<br>
+		<br>
+		<label for="selector">
+<span></span>
+</label>
+<span>Nacionalidad</span>
+<select id="selectorseism" name="selectorseism">
+<option value="">Elija nacionalidad</option>
+<option value="1">Argentina</option>
+<option value="2">Alemana</option>
+<option value="3">Australiana</option>
+<option value="1">Austriaca</option>
+<option value="2">Americana</option>
+<option value="3">Arabe</option>
+<option value="1">Belgica</option>
+<option value="2">Bimarna</option>
+<option value="3">Brasileña</option>
+<option value="1">Bulgara</option>
+<option value="2">Canadiense</option>
+<option value="3">Chilena</option>
+<option value="1">China</option>
+<option value="2">Colombiana</option>
+<option value="3">coreana</option>
+<option value="1">Cubana</option>
+<option value="2">Dominicana</option>
+<option value="3">Danesa</option>
+<option value="1">Mexicana</option>
+<option value="2">Peruana</option>
+<option value="3">puerto riqueña</option>
+<option value="1">inglesa</option>
+<option value="2">francesa</option>
+<option value="3">Española</option>
+</select>
+<br>
+<label for="cedulam">
+<span> cedula:</span>
+</label>
+<input id="cedulam" name="cedulam" type="text">
+<br>
+<label for="celularm">
+<span> celular:</span>
+</label>
+<input id="celularm" name="celularm" type="text" ></td>
+<br>
+<label for="correom">
+<span> Correo:</span>
+</label>
+<input id="correom" name="correom" type="email"></td>
+<br>
+<label for="direccionm">
+<span> Direccion:</span>
+</label>
+<input id="direccionm" name="direccionm" type="text">
+<br>
+
+<br> 
+<input type="submit" name="submit" class="btn btn-primary" value="Enviar">
+
+
+</form>
+
+
+</body>
+</html>
